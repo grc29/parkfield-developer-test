@@ -1,0 +1,91 @@
+footer {
+  padding: 45px 0 90px;
+  background: #a8a8a8;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .shop-column,
+    .about-column,
+    .explore-column,
+    .newsletter-column,
+    .locations-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h3.title {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        margin-bottom: 25px;
+      }
+      a {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 30px;
+        &.last {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .newsletter-column {
+      p.newsletter-text {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        color: #fff;
+        max-width: 335px;
+        line-height: 30px;
+        margin-bottom: 20px;
+      }
+      .email-field {
+        height: 45px;
+        width: 355px;
+        display: flex;
+        margin-bottom: 20px;
+        .email-input {
+          padding: 18px;
+          width: 235px;
+          border: none;
+          border-top-left-radius: 25px;
+          border-bottom-left-radius: 25px;
+          &::placeholder {
+            font-family: "Roboto", sans-serif;
+            font-size: 12px;
+            color: #b5b5b5;
+          }
+        }
+        .signup-btn {
+          width: 120px;
+          padding: 12px 25px 12px 25px;
+          background: #2f80ed;
+          border-top-right-radius: 25px;
+          border-bottom-right-radius: 25px;
+          font-family: "Roboto", sans-serif;
+          font-size: 20px;
+          color: #fff;
+          font-weight: 700;
+          margin-bottom: 0;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .social-icons {
+        display: flex;
+        width: 160px;
+        justify-content: space-between;
+        i {
+          font-size: 20px;
+          color: #fff;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

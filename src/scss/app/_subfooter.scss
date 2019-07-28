@@ -1,0 +1,46 @@
+section#subfooter {
+  padding: 15px 0 10px;
+  background: #333;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .left-side {
+      display: flex;
+      p.copyright,
+      a.site,
+      .divider,
+      p.designby {
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        color: #fff;
+        margin-bottom: 0;
+      }
+      p.copyright {
+        margin-right: 15px;
+      }
+      a.site {
+        text-decoration: none;
+        margin-right: 12px;
+      }
+      .divider {
+        margin-right: 12px;
+      }
+    }
+    .right-side {
+      display: flex;
+      i {
+        font-size: 14px;
+        color: #fff;
+        &.fa-cc-visa {
+          margin-right: 30px;
+        }
+        &.fa-cc-mastercard {
+          margin-right: 30px;
+        }
+        &.fa-cc-paypal {
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+}
