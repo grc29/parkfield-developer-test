@@ -108,8 +108,48 @@ $(document).ready(() => {
 
   populateProducts.always(() => {
     $(".color-circle").click(data => {
-      let id;
-      console.log(data);
+      let activeColor = data.target.className;
+      let product = data.target.parentNode.parentNode;
+      let product_id = product.id;
+      let image_id;
+      // Find activeColor
+      if (activeColor.indexOf("Red") != -1) {
+        activeColor = "Red";
+      } else if (activeColor.indexOf("Blue") != -1) {
+        activeColor = "Blue";
+      } else if (activeColor.indexOf("Yellow") != -1) {
+        activeColor = "Yellow";
+      } else if (activeColor.indexOf("White") != -1) {
+        activeColor = "White";
+      } else if (activeColor.indexOf("Lightblue") != -1) {
+        activeColor = "Lightblue";
+      }
+      // Change Image
+      let newImage, newSrc;
+      $.getJSON(`https://young-refuge-33420.herokuapp.com/${product_id}`).done(
+        data => {
+          data.variants.forEach(variant => {
+            if (variant.title == activeColor) {
+              image_id = variant.image_id;
+            }
+          });
+          newImage = data.images.filter(image => {
+            return image.id == image_id;
+          });
+          newSrc = newImage[0].src;
+          $(`#${product_id}.product-item .product-img img`).attr(
+            "src",
+            `${newSrc}`
+          );
+        }
+      );
+      // Remove old activeColor
+      $(
+        `#${product_id}.product-item .color-circle.activeColor`
+      )[0].classList.toggle("activeColor");
+      // Add new activeColor
+      $(data.toElement).addClass("activeColor");
+      // Add new Image
     });
   });
 });

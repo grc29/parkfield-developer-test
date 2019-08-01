@@ -10,7 +10,7 @@ section#product-area {
       grid-column-gap: 30px;
       grid-row-gap: 75px;
       .product-item {
-        height: 460px;
+        height: 100%;
         width: 100%;
         .product-img {
           width: 100%;
@@ -95,6 +95,17 @@ section#product-area {
           span.original-price {
             color: red;
             margin-right: 20px;
+            position: relative;
+            &:before {
+              position: absolute;
+              content: "";
+              left: 0;
+              top: 50%;
+              right: 0;
+              border-top: 1px solid;
+              border-color: inherit;
+              transform: rotate(-5deg);
+            }
           }
         }
       }
